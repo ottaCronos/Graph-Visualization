@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    font-family: 'IBM Plex Serif', serif;
+}
+
+#chart {
+	text-align: center;
+	position: relative;
+}
+
+#chart canvas {
+	position: absolute;
+	top: 0;
+	pointer-events: none;
+	z-index: -1;
+}
+
+#chart svg {
+    z-index: 2;
+    cursor: default;
+}
+
+/* --- Rotating circle on hover --- */
+
+.node-hovered {
+    fill: none;
+    stroke-width: 3px;
+    stroke-opacity: 0.75;
+    stroke-dasharray: 0,5;
+
+    animation-duration: 1s;
+    animation-name: changedash;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes changedash {
+    from { stroke-dashoffset: 5px; }
+    to { stroke-dashoffset: 0px; }
+}
+
+/* --- Tooltip --- */
+
+#chart-tooltip {
+    pointer-events: none;
+    z-index: 4;
+    font-size: 14px;
+    background: rgba(255,255,255,0.93);
+    padding: 10px 30px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 5px #c1c1c1;
+    font-family: 'Oswald', sans-serif;
+    max-width: 450px;
+    text-align: center;
+}
+
+#chart-tooltip .tooltip-title {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+#chart-tooltip .tooltip-type {
+    font-size: 13px;
+    color: #696969;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+}
+
+#chart-tooltip .tooltip-description {
+    font-size: 14px;
+    font-weight: 300;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    letter-spacing: 0.03em;
+    font-family: 'IBM Plex Serif', sans-serif;
+    color: #2e2e2e;
+    line-height: 150%;
+}
+
+#chart-tooltip .tooltip-connections {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 0.5em;
+    letter-spacing: 0.03em;
+    color: #2e2e2e;
+}
+#chart-tooltip .tooltip-connections-strong {
+    font-size: 13px;
+    font-weight: 300;
+    padding-bottom: 0.3em;
+    letter-spacing: 0.01em;
+    color: #5c5c5c;
+}
+
+/* --- Buttons --- */
+
+button:focus {
+    outline: 0;
+}

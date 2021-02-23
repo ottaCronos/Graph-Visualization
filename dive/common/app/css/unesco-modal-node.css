@@ -1,0 +1,409 @@
+/* --- Modal (node) --- */
+
+#chart-modal-full-img {
+    width: 100%;
+    padding-bottom: 40%;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+
+#chart-modal-img-slider {
+    width: 100%;
+    /*padding-bottom: 40%;*/
+    height: 430px;
+    /*
+    background-repeat: no-repeat;
+    background-size: cover;
+    */
+    margin-bottom: 40px;
+}
+
+#chart-modal-img-slider .glide__track ul {
+    display: flex;
+    height: 430px;
+}
+
+#chart-modal-img-slider .glide__track ul li {
+    text-align: center;
+    list-style: none;
+}
+
+#chart-modal-img-slider .glide__track ul li iframe {
+	border: none;
+	height: 350px;
+	width: 80%;
+}
+
+#chart-modal-img-slider .glide__track ul li img {
+	max-height: 350px;
+}
+
+#chart-modal-img-slider .glide__bullets {
+    /*bottom: 0.5em;*/
+    bottom: inherit;
+}
+
+#chart-modal-img-slider .glide__bullets .glide__bullet {
+    /*bottom: 0.5em;*/
+    bottom: inherit;
+}
+
+#chart-modal-img-slider .glide__bullet {
+    background-color: rgba(0,0,0,.5);
+}
+
+#chart-modal-img-slider .glide__bullet--active {
+    background-color: rgba(0,0,0,.75);
+}
+
+#chart-modal-img-slider .copyright, #chart-modal-img-slider .description {
+    font-size: 12px;
+    /*font-weight: bold;*/
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+}
+
+#chart-modal-img-slider .copyright {
+    font-style: italic;
+}
+
+#chart-modal-img-slider-controls {
+    padding: 0 40px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+#chart-modal-img-slider-controls .right {
+    float: right;
+}
+
+#chart-modal-img-slider-controls button {
+    background-color: rgba(0,0,0,.5);
+    height: 30px;
+    width: 30px;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    /*padding: 6px 10px;*/
+    line-height: 0px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+
+#chart-modal-img-slider-controls button:hover {
+    background-color: rgba(0,0,0,.75);
+}
+
+#chart-modal-inner {
+    padding: 20px 40px 40px 40px;
+    text-align: left;
+}
+
+#modal-node-type {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #717171;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+}
+
+#modal-node-year {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #717171;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+    float: right;
+}
+
+#modal-node-countries {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 1em;
+    color: #7EB852;
+    margin-top: 0px;
+}
+
+#modal-node-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+#modal-node-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #717171;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2em;
+    margin-top: -1.2em;
+}
+
+#modal-node-description {
+    font-size: 15px;
+    line-height: 1.75;
+    margin: 0 auto;
+    /*
+    max-height: 200px;
+    overflow-y: scroll;
+    */
+}
+
+#modal-node-description img.sdg-icon {
+    height: 150px;
+    width: 150px;
+    float: left;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    margin-right: 10px;
+}
+
+#chart-modal-img-row {
+    width: 100%;
+    display: flex;
+    box-shadow: inset 0 -6px 0 black;
+}
+
+.modal-img-div {
+    height: 100%;
+}
+
+.modal-img-div img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    z-index: -1;
+}
+
+#modal-node-link {
+    margin-top: 20px;
+}
+
+#modal-node-link a {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+    color: #206CA9;
+}
+
+#modal-node-watch {
+    margin-bottom: 20px;
+}
+
+#modal-node-watch a {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+    color: #206CA9;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#modal-node-sustainability {
+    background-image: url(../../../sdg-single/img/wheel_transparent.png);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    font-size: 20px;
+    color: #206CA9;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    height: 50px;
+    background-position: left;
+    background-size: 50px;
+    padding-left: 60px;
+    padding-top: 6px;
+}
+
+#modal-node-sustainability .title {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    font-size: 20px;
+    color: #206CA9;
+    margin-bottom: 10px;
+}
+
+#modal-node-keywords {
+    font-size: 12px;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: -5px;
+}
+
+#modal-node-keywords li {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background: #ccc;
+}
+
+#navigate {
+    font-size: 12px;
+    margin: 20px 40px;
+    text-align: center;
+    border: #cccccc 1px;
+    background-color: #dddddd;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+#navigate.spaced {
+    margin-bottom: 20px;
+}
+
+#navigate p {
+    margin-bottom: 10px;
+}
+
+#navigate a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background: #5799ce;
+    text-decoration: none;
+    color: white;
+}
+
+#permalink {
+    margin: 20px 40px;
+    text-align: center;
+    font-family: monospace;
+    border: #cccccc 1px;
+    background-color: #dddddd;
+    padding: 10px;
+}
+
+#permalink a {
+    text-decoration: underline;
+    color: #206CA9;
+}
+
+#modal-node-header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+
+#modal-node-header-icon {
+    width: 200px;
+    height: 200px;
+}
+
+#modal-node-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 100%;
+}
+
+#modal-node-header-title {
+    flex-grow: 1;
+    display: block;
+    align-self: flex-start;
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.3;
+    padding-bottom: 10px;
+}
+
+#modal-node-header-link {
+    text-align: right;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #206CA9;
+}
+
+@media only screen and (max-width: 768px) {
+    #modal-node-header {
+        flex-direction: column;
+    }
+    #modal-node-header-wrapper {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    #modal-node-header-link {
+        text-align: left;
+    }
+}
+
+#modal-node-lists {
+    margin-top: 20px;
+}
+
+#modal-node-lists li {
+    font-size: 12px;
+    color: #888888;
+    padding-bottom: 2px;
+}
+
+#modal-node-lists li.bold {
+    color: #000000;
+}
+
+#modal-node-lists a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#modal-node-lists a:hover {
+    text-decoration: underline;
+}
+
+#modal-node-lists .panel .panel-header {
+    display: block;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#modal-node-lists .panel ul {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    list-style: disc outside;
+    margin-left: 15px;
+}
+
+#modal-node-lists .panel ul {
+    display: none;
+}
+
+#modal-node-lists .panel ul.panel-active {
+    display: block;
+}
+
+#sdg-wheel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height:50px;
+    width: 50px;
+    background-image: url(../../../sdg-single/img/wheel_transparent.png);
+    background-size: contain;
+    cursor: pointer;
+    z-index: 50;
+}

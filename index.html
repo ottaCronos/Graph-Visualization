@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<!-- Mirrored from ich.unesco.org/dive/constellation/?language=fr%26hide=about,more,language by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 19:18:05 GMT -->
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+	    <title>UNESCO | A constellation of living heritage</title>
+
+        <meta property="og:title" content="UNESCO: A constellation of living heritage" />
+        <meta property="og:url" content="https://ich.unesco.org/dive/constellation" />
+        <meta property="og:image" content="img/constellation.png" />
+        <meta property="og:description" content="This interactive visual demonstrates the diversity and interconnectedness of the living heritage elements inscribed under the 2003 Convention. Navigate by concepts such as ‘Dance’, ‘Family’, or ‘Rituals’ to see more than 500 elements from communities in over 100 countries. Learn about this heritage and imagine where yours fits in!" />
+
+        <!-- Analytics -->
+        <script src="./dive/common/app/js/analytics.js"></script>
+
+        <!-- Sharing -->
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5c0122c64b87f6001159588d&product=custom-share-buttons' async='async'></script>
+
+		<!-- Styling -->
+        <link href="./dive/common/vendor/css/glide.core.min.css" rel="stylesheet">
+        <link href="./dive/common/vendor/css/glide.theme.min.css" rel="stylesheet">
+        <link href="./dive/common/app/css/style.css" rel="stylesheet">
+        <link href="./dive/common/app/css/modal.css" rel="stylesheet">
+        <link href="./dive/common/app/css/unesco-modal-intro.css" rel="stylesheet">
+        <link href="./dive/common/app/css/unesco-modal-node.css" rel="stylesheet">
+        <link href="./dive/common/app/css/unesco-modal-search.css" rel="stylesheet">
+        <link href="./dive/common/app/css/unesco-modal-legend.css" rel="stylesheet">
+        <link href="./dive/common/app/css/menu.css" rel="stylesheet">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&amp;family=Oswald:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/bae31afa51.js" crossorigin="anonymous"></script>
+
+		<!-- JavaScript files -->
+		<script src="./dive/common/vendor/js/d3.v5.min.js"></script>
+        <script src="./dive/common/vendor/js/jLouvain.js"></script>
+        <script src="./dive/common/vendor/js/modal.min.js"></script>
+        <script src="./dive/common/vendor/js/fontfaceobserver.js"></script>
+        <script src="./dive/common/vendor/js/lunr.js"></script>
+        <script src="./dive/common/vendor/js/search-params-polyfill.js"></script>
+        <script src="./dive/common/vendor/js/glide.min.js"></script>
+        <script src="./dive/common/app/js/translations.js"></script>
+        <script src="./dive/common/app/js/search.js"></script>
+        <script src="./dive/common/app/js/graph.js"></script>
+        <script src="./dive/common/app/js/unesco-modal-node.js"></script>
+        <script src="./dive/data/version.js"></script>
+
+        <!-- The visual function -->
+        <script src="js/createConstellationVisual.js"></script>
+        <script src="js/translationsConstellation.js"></script>
+
+	</head>
+
+	<body style="overflow: hidden;">
+
+        <nav id="navigation">
+            <button id="menu-search" class="single-button menu-pos-1"><i class="fas fa-search"></i></button>
+            <button id="menu-animate" class="single-button menu-pos-2"><i class="fas fa-play"></i></button>
+            <button id="menu-legend" class="single-button menu-pos-3"><i class="fas fa-info"></i></button>
+            <button id="menu-csv" class="single-button menu-pos-4"><i class="fas fa-file-download"></i></button>
+            <!-- The dropdown menu -->
+            <div id="menu" class="menu-pos-5">
+                <button id="menu-button"></button>
+                <ul>
+                    <li id="menu-intro"></li>
+                    <li id="menu-about"><a href="https://ich.unesco.org/dive/" target="_blank"></a></li>
+                    <li id="menu-more">
+                        <ul>
+                            <li id="menu-more-constellation"><a href="index.html"></a></li>
+                            <li id="menu-more-biome"><a href="https://ich.unesco.org/dive/biome/"></a></li>
+                            <li id="menu-more-domain"><a href="https://ich.unesco.org/dive/domain/"></a></li>
+                            <li id="menu-more-threat"><a href="https://ich.unesco.org/dive/threat/"></a></li>
+                            <li id="menu-more-sdg"><a href="https://ich.unesco.org/dive/sdg/"></a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-language">
+                        <ul>
+                            <li id="menu-language-en">English</li>
+                            <li id="menu-language-fr">Français</li>
+                            <li id="menu-language-es">Español</li>
+                        </ul>
+                    </li>
+                    <li id="menu-share">
+                        <ul>
+                            <li data-network="facebook" class="st-custom-button">Facebook</li>
+                            <li data-network="twitter" class="st-custom-button">Twitter</li>
+                            <li data-network="reddit" class="st-custom-button">Reddit</li>
+                            <li data-network="pinterest" class="st-custom-button">Pinterest</li>
+                            <li data-network="email" class="st-custom-button">Email</li>
+                            <li data-network="sms" class="st-custom-button">SMS</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- The chart container -->
+        <div id="chart">
+            <div id="chart-tooltip">
+                <p class="tooltip-type"></p>
+                <p class="tooltip-title"></p>
+            </div>
+        </div>
+
+        <!-- The modal container -->
+        <div class="modal" id="container-modal">
+            <div class="modal-inner">
+                <a id="modal-close" data-modal-close>x</a>
+                <div class="modal-content"></div>
+            </div>
+        </div>
+
+        <!-- The ICH element info modal -->
+        <div id="chart-modal" style="display:none">
+            <div id="chart-modal-full-img"></div>
+            <div id="chart-modal-inner">
+                <p id="modal-node-year"></p>
+                <p id="modal-node-type"></p>
+                <p id="modal-node-countries"></p>
+                <p id="modal-node-title"></p>
+                <div id="modal-node-watch"></div>
+                <div id="modal-node-description"></div>
+                <div id="modal-node-link"></div>
+            </div>
+            <div class="slider glide" id="chart-modal-img-slider"></div>
+            <div id="navigate"></div>
+            <div id="permalink"></div>
+        </div>
+
+        <!-- The intro modal's content -->
+        <div id="intro-modal" style="display:none">
+            <div id="modal-intro-inner">
+                <div id="intro-bar">
+                    <p id="intro-welcome"></p>
+                    <p id="intro-unesco"></p>
+                    <p id="intro-title"></p>
+                    <p id="intro-subtext"></p>
+                    <p id="intro-info"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The search modal -->
+        <div id="search-modal" style="display:none">
+            <div id="modal-search-inner">
+                <p id="modal-search-title"></p>
+                <input type="text" id="modal-search-input">
+                <div id="modal-search-results"></div>
+            </div>
+        </div>
+
+        <!-- The legend modal -->
+        <div id="legend-modal" style="display:none">
+            <div id="modal-legend-inner">
+                <img id="modal-legend-img"/>
+            </div>
+        </div>
+
+        <!-- Initialize everything -->
+        <script src="js/main.js"></script>
+
+	</body>
+
+<!-- Mirrored from ich.unesco.org/dive/constellation/?language=fr%26hide=about,more,language by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 19:18:37 GMT -->
+</html>

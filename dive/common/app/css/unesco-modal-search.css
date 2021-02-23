@@ -1,0 +1,68 @@
+/* --- Modal (search) --- */
+
+
+.modal-search .modal-inner .modal-content {
+    max-width: none;
+}
+
+@media screen and (min-width: 900px) {
+
+    .modal-search .modal-inner {
+        width: 800px;
+        height: 60%;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .modal-search .modal-inner {
+        width: 90%;
+        height: 90%;
+    }
+
+}
+
+#modal-search-inner {
+    padding: 30px 40px;
+    width: 100%;
+}
+
+#modal-search-title {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0.2em auto 1em auto;
+}
+
+#modal-search-input {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color: #696969;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+#modal-search-input:focus{
+    outline: none;
+}
+
+#modal-search-results {
+    width: 100%;
+}
+
+#modal-search-results ul {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#modal-search-results li {
+    cursor: pointer;
+}
+
+#modal-search-results li:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+/* --- Modal (legend) --- */
+
+#modal-legend-inner {
+    padding: 20px;
+    width: 100%;
+}
+
+#modal-legend-title {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0.2em auto 1em auto;
+}
+
+#modal-legend-inner img {
+    width: 100%;
+}
+
+#modal-legend-inner img.boxed {
+    border: 0px solid #eeeeee;
+}
